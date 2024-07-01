@@ -1,11 +1,20 @@
 ---
-const { title, text, thumbnail, id } = Astro.props;
+const { title, text, thumbnail, id, price, state } = Astro.props;
 ---
 
-<article>
-  <a href={`/products/${id}`}>
-    <h2>{title}</h2>
-    <img src={`/images/${thumbnail}`} alt={title} />
-    <p>{text}</p>
-  </a>
-</article>
+<div class="container">
+  <div class="product">
+    <div class="product-images">
+      <img src={`/images/${thumbnail}`} alt="{title}" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h2 class="product-title">{title}</h2>
+      <p class="product-description">{text}</p>
+      <div class="product-info">
+        <p class="product-price">¥{price}</p>
+        <p class="product-state">{state ? "販売中" : "売切"}</p>
+      </div>
+      <button class="product-button">Cart</button>
+    </div>
+  </div>
+</div>

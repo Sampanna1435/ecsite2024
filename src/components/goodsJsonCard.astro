@@ -4,9 +4,9 @@ console.log(goods);
 ---
 
 <ul>
-  {goods.map((list) => 
-     <li>{list.name}</li>
+  {goods.map((list) =>
      <img src=`/images/${list.itemphotos[0]}` />
+     <li>{list.name}</li>
      <p>{list.text}</p>
   )}
 </ul>
