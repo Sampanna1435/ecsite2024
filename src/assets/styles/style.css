@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -8,8 +8,13 @@ body {
 }
 
 header {
-  background-color: #ccc;
-  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  /* Align items to opposite ends */
+  align-items: center;
+  /* Center items vertically */
+  /* Background color of header */
+  padding: 10px 20px;
 }
 
 .logo {
@@ -21,30 +26,42 @@ header {
 }
 
 .logo1 {
-  width: 75px;
+  width: 85px;
+}
+
+.cart-box {
+  width: 50px;
 }
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f4f4f4;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  gap: 20px;
+  padding: 20px;
+  width: 80%;
+  box-sizing: border-box;
 }
 
 .product {
-  display: flex;
-  max-width: 600px;
-  /* Adjusted max-width */
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin: 20px;
-  /* Added margin for spacing */
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+  /* Add this line for the animation effect */
+}
+
+.product:hover {
+  transform: scale(1.05);
+  /* Slightly increase the size */
 }
 
 .product-images {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +74,6 @@ header {
 }
 
 .product-details {
-  flex: 1;
   padding: 20px;
 }
 
@@ -83,23 +99,19 @@ header {
 
 .product-price {
   font-size: 1.2em;
-  color: #333;
+  color: green;
 }
 
 .product-state {
   font-size: 1em;
-  color: #666;
 }
 
-.product-button {
-  padding: 10px 20px;
-  background-color: #f0c14b;
-  color: #111;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s;
+.product-state-available {
+  color: blue;
+}
+
+.product-state-soldout {
+  color: red;
 }
 
 .product-button:hover {
@@ -107,7 +119,6 @@ header {
 }
 
 footer {
-  background-color: #333;
   color: #fff;
   text-align: center;
   margin-top: 30px;
@@ -119,5 +130,18 @@ footer p {
   margin: 0;
   padding: 50px;
   font-size: 0.8em;
+}
+
+@media (max-width: 900px) {
+  .product {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+@media (max-width: 600px) {
+  .product {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
