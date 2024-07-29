@@ -9,18 +9,8 @@ const workPages = await getCollection("goods");
   <body>
     <main>
       <div class="container" id="cards-container">
-        {
-          workPages.map((productPage) => (
-            <Goodscard
-              title={productPage.data.title}
-              href={`/goods/${productPage.slug}`}
-              thumbnail={productPage.data.thumbnail}
-              body={productPage.data.description}
-              price={productPage.data.price}
-              state={productPage.data.state}
-            />
-          ))
-        }
+          {workPages.map(productPage => (<Goodscard title={productPage.data.title} href=`/13_ecsite/goods/${productPage.slug}` thumbnail={productPage.data.thumbnail} body={productPage.data.description}  price={productPage.data.price}  state={productPage.data.state}/>
+))}
       </div>
       {workPages.length > 9 && <button id="load-more-button">More</button>}
       <script>

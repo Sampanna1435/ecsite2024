@@ -1,10 +1,10 @@
 ---
-const { title, thumbnail, price, state } = Astro.props;
+const { href, title, thumbnail, price, state } = Astro.props;
 const stateClass = state ? "product-state-available" : "product-state-soldout";
 ---
 
 <div class="product">
-  <a href="../content/goods/">
+  <a href={href}>
     <div class="product-images">
       <img
         src={`13_ecsite/images/${thumbnail}`}
