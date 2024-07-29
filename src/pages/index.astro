@@ -1,18 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Goodscard from '../components/goodsCard.astro';
-import { getCollection } from 'astro:content';
-const workPages = await getCollection('goods');
+import Layout from "../layouts/Layout.astro";
+import Goodscard from "../components/goodsCard.astro";
+import { getCollection } from "astro:content";
+const workPages = await getCollection("goods");
 ---
 
 <Layout>
   <body>
+    <main>
+      <div class="container" id="cards-container">
+        {
+          workPages.map((productPage) => (
+            <Goodscard
+              title={productPage.data.title}
+              href={`/goods/${productPage.slug}`}
+              thumbnail={productPage.data.thumbnail}
+              body={productPage.data.description}
+              price={productPage.data.price}
+              state={productPage.data.state}
+            />
+          ))
+        }
+      </div>
+      {workPages.length > 9 && <button id="load-more-button">More</button>}
+      <script>
+        // public/loadMore.js
 
-<main>
-  <div class="container">
-  {workPages.map(productPage => (<Goodscard title={productPage.data.title} href=`/goods/${productPage.slug}` thumbnail={productPage.data.thumbnail} body={productPage.data.description} price={productPage.data.price} state={productPage.data.state}/>
-))}
-</div>
-</main>
- </body>
+        document.addEventListener("DOMContentLoaded", () => {
+          const loadMoreButton = document.getElementById("load-more-button");
+          const cardsContainer = document.getElementById("cards-container");
+          let displayCount = 9;
+          let isExpanded = false;
+
+          loadMoreButton.addEventListener("click", () => {
+            const cards = Array.from(cardsContainer.children);
+
+            if (isExpanded) {
+              displayCount = 9;
+              loadMoreButton.textContent = "More";
+            } else {
+              displayCount += 9;
+              loadMoreButton.textContent = "Close";
+            }
+
+            isExpanded = !isExpanded;
+
+            cards.forEach((card, index) => {
+              if (index < displayCount) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+
+          const cards = Array.from(cardsContainer.children);
+          cards.forEach((card, index) => {
+            if (index >= displayCount) {
+              card.style.display = "none";
+            }
+          });
+        });
+      </script>
+    </main>
+  </body>
 </Layout>

@@ -132,6 +132,32 @@ footer p {
   font-size: 0.8em;
 }
 
+/* public/styles.css */
+#load-more-button {
+  display: block;
+  margin: 20px auto;
+  /* Center the button */
+  padding: 10px 20px;
+  background-color: #ac2bdf;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  /* Curved edges */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#load-more-button:hover {
+  background-color: #ac2bdf;
+  /* Darker blue on hover */
+}
+
+#load-more-button:active {
+  background-color: #781c9c;
+  /* Even darker blue when active */
+}
+
 @media (max-width: 900px) {
   .product {
     flex: 1 1 calc(50% - 20px);
