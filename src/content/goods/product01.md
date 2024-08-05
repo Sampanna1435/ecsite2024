@@ -1,29 +1,29 @@
 ---
 layout: ../../layouts/goodsLayout.astro
 text: 世界中から厳選したイカと、日本近海で獲れたタラのすり身を主に使用した魚肉シートを食べやすい一口サイズにカットし、秘伝の調味でさっぱりとした酢味に仕上げました。
-thumbnail: keyboard.jpg
-price: 100
+thumbnail: ./keyboard02.jpg
+price: 15,000
 state: true
 id: 4710158-2
-colors: 赤色
+colors: black
 title: Logicool G PRO Keyboard
-maker: よっちゃん食品工業（株）
+maker: Logicool
 ---
  <div class="wrapper">
 <div class="container-1">
         <article>
         <h2>Logicool G PRO Keyboard</h2>
             <div class="img-switcher">
-                <img id="mainImg" class="main-img" src="/13_ecsite/images/keyboard.jpg" alt="犬1" />
+                <img id="mainImg" class="main-img" src="/13_ecsite/images/keyboard01.jpg" alt="product" />
                 <div class="thumbnails">
                     <button class="thumb-btn active">
-                        <img class="thumb-img" src="/13_ecsite/images/keyboard.jpg" alt="product1" />
+                        <img class="thumb-img" src="/13_ecsite/images/keyboard01.jpg" alt="product1" />
                     </button>
                     <button class="thumb-btn">
-                        <img class="thumb-img" src="/13_ecsite/images/keyboard.jpg" alt="product2" />
+                        <img class="thumb-img" src="/13_ecsite/images/keyboard02.jpg" alt="product2" />
                     </button>
                     <button class="thumb-btn">
-                        <img class="thumb-img" src="/13_ecsite/images/keyboard.jpg" alt="product3" />
+                        <img class="thumb-img" src="/13_ecsite/images/keyboard03.jpg" alt="product3" />
                     </button>
                 </div>
             </div>
